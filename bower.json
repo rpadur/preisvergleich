@@ -1,26 +1,27 @@
 {
-	"name": "PreisvergleichWeb",
-	"version": "0.0.1",
-	"authors": 
-	[
-		"Ronald Padur"
-	],
-
-	"description": "Preisvergleich im Web",
-	"main": "index.html",
-	"license": "MIT",
-	"private": true,
-	"dependencies": 
-	{
-		"angular": "~1.4.3",
-		"angular-resource": "~1.4.3",
-		"angular-route": "~1.4.3",
-		"angular-loader": "~1.4.3",
-		"angular-mocks": "~1.4.3",
-		"bootstrap": "~3.3.5",
-		"lodash": "~3.10.1",
-		"underscore.string": "~3.1.1",
-		"font-awesome": "~4.4.0",
-		"html5-boilerplate": "~5.2.0"
-	}
+  "name": "PreisvergleichWeb",
+  "version": "0.0.1",
+  "authors": [
+    "Ronald Padur"
+  ],
+  "description": "Preisvergleich im Web",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4.3",
+    "angular-resource": "~1.4.3",
+    "angular-route": "~1.4.3",
+    "angular-loader": "~1.4.3",
+    "angular-mocks": "~1.4.3",
+    "bootstrap": "~3.3.5",
+    "lodash": "~3.10.1",
+    "underscore.string": "~3.1.1",
+    "font-awesome": "~4.4.0",
+    "html5-boilerplate": "~5.2.0",
+    "angular-i18n": "~1.4.4"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.3"
+  }
 }
