@@ -29,6 +29,7 @@ app.config(['$provide', function($provide) {
             $delegate.NUMBER_FORMATS.PATTERNS[1].posPre = '\u00A4\u00a0';
             $delegate.NUMBER_FORMATS.PATTERNS[1].posSuf = '';
       }
+      console.log($delegate.id);
       return $delegate;
     }]);
   }]);

@@ -1,7 +1,7 @@
 var app = angular.module("preisvergleichApp.controllers", []);
 app.controller('ProduktCtrl', function($scope, $resource, ProduktService) {
     $scope.orderProp = 'name';
-    $scope.neuesProdukt = {};
+    $scope.neuesProdukt = new ProduktService({});
     // Laden aller Produkte
     $scope.articles = ProduktService.query(function() {
 	console.log($scope.articles);
@@ -10,14 +10,19 @@ app.controller('ProduktCtrl', function($scope, $resource, ProduktService) {
     $scope.saveProdukt = function(name, preis) {
 	console.log(name);
 	console.log(preis);
+	
+	
+	
+	$scope.neuesProdukt.$save();
 	$scope.articles.push({
 
 	    name : name,
-	    preis : preis
+	    preis : preis,
+	    id: $scope.neuesProdukt.id
 	});
 	$scope.neuesProdukt.name = "";
 	$scope.neuesProdukt.preis = "";
-
+	$scope.neuesProdukt.id="";
     };
 
     $scope.deleteProdukt = function(/** Integer */
