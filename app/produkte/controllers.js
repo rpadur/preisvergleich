@@ -16,7 +16,11 @@ app.controller('ProduktCtrl', function($scope, $resource, ProduktService) {
 	    }).then(function(resource) {
 		$scope.page = resource.page;
 		$scope.page.currentPage = $scope.page.number + 1;
-		return resource.$get('produkte');
+		if (resource.page.totalElements == 0) {
+		    return [];
+		} else {
+		    return resource.$get('produkte');
+		}
 	    }).then(function(produktListe) {
 		$scope.articles = produktListe;
 	    });
@@ -30,7 +34,12 @@ app.controller('ProduktCtrl', function($scope, $resource, ProduktService) {
 	console.log(name);
 	console.log(preis);
 	ProduktService.load().then(function(resource) {
-	    return resource.$post('produkte', {}, $scope.neuesProdukt);
+	    var ergebnis = resource.$post('produkte', {}, {
+		"name" : name,
+		"preis" : preis
+	    });
+	    console.log(ergebnis);
+	    return ergebnis;
 	})
 	$scope.articles.push({
 	    name : $scope.neuesProdukt.name,
